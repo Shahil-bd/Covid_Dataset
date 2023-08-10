@@ -1,3 +1,5 @@
+-- Selecting on condition from dataset
+
 SELECT *
 FROM roktim.dbo.Covid_Death
 ORDER BY
@@ -10,7 +12,7 @@ SELECT Location, date, total_cases, new_cases, total_deaths, population
 from roktim.dbo.Covid_Death
 order by 1, 2
 
--- Looking at Total Cases vs Total Deaths
+-- Looking at Total Cases vs Total Deaths in Bangladesh
 
 SELECT Location, date, total_cases, total_deaths, (total_deaths/total_cases)*100 as Death_Percentage
 from roktim.dbo.Covid_Death
@@ -135,4 +137,9 @@ Join roktim..Covid_Vaccination vac
 	and dea.date = vac.date
 where dea.continent is not null 
 --order by 2,3
+
+-- Selecting on condition from temp table	
+Select *
+from PercentPopulatonVaccinated
+where dea. continent is distinct
 
